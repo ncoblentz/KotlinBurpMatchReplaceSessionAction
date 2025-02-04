@@ -11,6 +11,7 @@ import com.nickcoblentz.montoya.settings.GenericExtensionSettingsFormGenerator
 import com.nickcoblentz.montoya.settings.StringExtensionSetting
 import com.nickcoblentz.montoya.settings.ExtensionSettingsContextMenuProvider
 import burp.api.montoya.http.message.requests.HttpRequest
+import com.nickcoblentz.montoya.withUpdatedContentLength
 import kotlin.text.Regex
 
 
@@ -170,8 +171,7 @@ class MatchReplaceSessionExtension : BurpExtension, SessionHandlingAction {
 
     override fun performAction(actionData: SessionHandlingActionData?): ActionResult? {
         actionData?.request()?.let {
-
-            return ActionResult.actionResult(HttpRequest.httpRequest(it.httpService(),doMatchReplace(it.toString())))
+            return ActionResult.actionResult(HttpRequest.httpRequest(it.httpService(),doMatchReplace(it.toString())).withUpdatedContentLength())
         }
         return ActionResult.actionResult(null)
     }
