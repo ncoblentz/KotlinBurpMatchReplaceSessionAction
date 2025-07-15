@@ -168,7 +168,7 @@ class MyExtensionSettings {
     val matchTwoSetting: String by settingsManager.stringSetting("Second Match Expression", "")
     val replaceTwoSetting: String by settingsManager.stringSetting("Second Replace Expression", "")
 
-    val matchThreeSetting: String by settingsManager.stringSetting("Third Replace Expression", "")
+    val matchThreeSetting: String by settingsManager.stringSetting("Third Match Expression", "")
     val replaceThreeSetting: String by settingsManager.stringSetting("Third Replace Expression", "")
 
 
