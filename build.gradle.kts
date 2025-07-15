@@ -1,7 +1,7 @@
 plugins {
     // Provides Kotlin Language Support
     // https://plugins.gradle.org/plugin/org.jetbrains.kotlin.jvm
-    kotlin("jvm") version "2.1.10"
+    kotlin("jvm") version "2.2.0"
 
     // Provides the shadowJar task in Gradle
     // https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow
@@ -24,7 +24,6 @@ repositories {
 
     maven(url="https://jitpack.io") {
         content {
-            includeGroup("com.github.milchreis")
             includeGroup("com.github.ncoblentz")
         }
     }
@@ -36,13 +35,9 @@ dependencies {
 
     // Include the Montoya API from Maven Central:
     // https://central.sonatype.com/artifact/net.portswigger.burp.extensions/montoya-api
-    // Check for latest version: https://central.sonatype.com/artifact/net.portswigger.burp.extensions/montoya-api/versions
-    implementation("net.portswigger.burp.extensions:montoya-api:2024.12")
 
-    // Enable these if you want to use https://github.com/ncoblentz/BurpMontoyaLibrary
-    implementation("com.github.ncoblentz:BurpMontoyaLibrary:0.1.27")
-    //https://github.com/Milchreis/UiBooster/releases (a dependency of BurpMontoyaLibrary)
-    implementation("com.github.milchreis:uibooster:1.21.1")
+    implementation("com.github.ncoblentz:BurpMontoyaLibrary:0.2.0")
+    implementation("net.portswigger.burp.extensions:montoya-api:2025.6")
 }
 
 tasks.test {
